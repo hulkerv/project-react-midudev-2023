@@ -1,0 +1,26 @@
+Diferencia entre un componente y un elemento
+
+Un componente es una factoria de elementos. Es una funcióm¿n que al eejecutarse devuelve un elemento. M ientras que el elemento es lo que react renderiza.
+
+Modificar una prop asignandole un nuevo valor es una mala practica. Las props deben ser inmutables. Lo que se debe hacer antes de modificar una prop es crear una constante cuyo valor es igual a lo que se quiera pasar con la prop.
+
+Un children es el hijo de un elemeto. Lo que envuelve dicho elemento. Existe un prop especial que llamada children, que basicamente contiene todo lo que envuelve al aelemento. Esto nos permite crear componentes mas reutilizables. Si quieres que tu componente sea muy extensible, normalmente se quiere que sea un children
+
+se pueden pasar todas las props como objetos, pero esto puede llegar a ser una mala practica. Ya que:
+1. se estaria enviando muchas veces la información
+2. Puede hacer que el componente por temas de optimización se renderice sin necesidad.
+3. Es mas complejo entender que información esta llegando al componente
+
+
+Estado interno: el estado esta separado. Pertenece a cada componente. No afecta a la funcionalidad de componentes similares.
+
+DOM virtual: react solo actualiza lo que sufre un cambio. No actualiza el articulo completo.Lo que ocurre aquí es que react guarda todo lo que renderiza y hace las actualizaciones minimas para producir un cambio en la ui.
+
+hay dos formas en las react renderiza.Una es al actualizar el estado interno del componente y la otra es cuando un componente padre se vuelve a renderizar y propaga los cambios hacia abajo
+
+cuando rerenderizas un componente padre se renderizan tambien todos sus componentes hijos, independientemente de que sus props cambien o no 
+
+cuando se utiliza una prop para inicializar un estado son buenas practicas utilizar el prefijo 'initial'. Ejemplo:
+
+El estado inicial de un elemento solo se inicializa una vez, no se inicializa cada vez que la prop cambia. Simepre que se utilice una prop para iniciar un estado hay que tener en cuen ta que solo se inicializa una vez
+

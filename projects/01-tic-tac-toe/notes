@@ -1,0 +1,8 @@
+Al pasar una función como un prop no se debe pasar la ejecución de la función sino solamente la función en si, ya que, esta se ejecutaria cada vez que se renderice el componente y generalmente solo se espera ejecutar la función cuando ocurre algun evento como lo es un click. 
+
+queremos que la ejecucón se haga cuando se requiera y no cuando se renderice el componente
+
+es importante que los estados del nuevo renderizado siempre sean nuevos. Tanto los props como los estados siempre deben mantenerse inmutables.
+Si pasamos un array en el esatado cuando se actualice el estado lo ideal es que se cree una copia de ese array sin alterar el original 
+
+en react la actualizacion de los estado es asincrona
