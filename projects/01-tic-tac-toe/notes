@@ -6,3 +6,7 @@ es importante que los estados del nuevo renderizado siempre sean nuevos. Tanto l
 Si pasamos un array en el esatado cuando se actualice el estado lo ideal es que se cree una copia de ese array sin alterar el original 
 
 en react la actualizacion de los estado es asincrona
+
+?? identifica si es null o undefine
+
+|| identifica si es false o true
