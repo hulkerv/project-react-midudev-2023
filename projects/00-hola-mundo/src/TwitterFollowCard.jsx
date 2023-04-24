@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useState } from 'react'
 export const TwitterFollowCard = ({
   children,
-  userName = "unknow",
-  initialIsFollowing,
+  userName = 'unknow',
+  initialIsFollowing
 }) => {
-  const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
-  console.log("[TwitterFollowCard] render with userName:", userName);
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
+  console.log('[TwitterFollowCard] render with userName:', userName)
 
-  const text = isFollowing ? "Siguiendo" : "Seguir";
+  const text = isFollowing ? 'Siguiendo' : 'Seguir'
   const buttonClassName = isFollowing
-    ? "tw-followCard-button is-following"
-    : "tw-followCard-button";
-  const imageUrl = `https://unavatar.io/${userName}`;
+    ? 'tw-followCard-button is-following'
+    : 'tw-followCard-button'
+  const imageUrl = `https://unavatar.io/${userName}`
 
-  const handleClick = () => setIsFollowing(!isFollowing);
+  const handleClick = () => setIsFollowing(!isFollowing)
 
   return (
-    <article className="tw-followCard">
-      <header className="tw-followCard-header">
+    <article className='tw-followCard'>
+      <header className='tw-followCard-header'>
         <img
           src={imageUrl}
-          alt="El avatar de midudev"
-          className="tw-followCard-avatar"
+          alt='El avatar de midudev'
+          className='tw-followCard-avatar'
         />
-        <div className="tw-followCard-info">
+        <div className='tw-followCard-info'>
           <strong>{children}</strong>
-          <span className="tw-followCard-infoUsernName">@{userName}</span>
+          <span className='tw-followCard-infoUsernName'>@{userName}</span>
         </div>
       </header>
       <aside>
         <button className={buttonClassName} onClick={handleClick}>
-          <span className="tw-followCard-text">{text}</span>
-          <span className="tw-followCard-stopFollow">Dejar de Seguir</span>
+          <span className='tw-followCard-text'>{text}</span>
+          <span className='tw-followCard-stopFollow'>Dejar de Seguir</span>
         </button>
       </aside>
     </article>
-  );
-};
+  )
+}

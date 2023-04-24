@@ -1,29 +1,28 @@
-import { useState } from "react";
-import "./App.css";
-import { TwitterFollowCard } from "./TwitterFollowCard";
+import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard'
 
 const users = [
   {
-    userName: "midudev",
-    name: "Miguel Ángel Duran",
-    isFollowing: true,
+    userName: 'midudev',
+    name: 'Miguel Ángel Duran',
+    isFollowing: true
   },
   {
-    userName: "vegadev",
-    name: "Kevin Jesús Vega Torres",
-    isFollowing: false,
+    userName: 'vegadev',
+    name: 'Kevin Jesús Vega Torres',
+    isFollowing: false
   },
   {
-    userName: "PacoHdezs",
-    name: "Paco Hdez",
-    isFollowing: true,
+    userName: 'PacoHdezs',
+    name: 'Paco Hdez',
+    isFollowing: true
   },
   {
-    userName: "TMChein",
-    name: "Tomas",
-    isFollowing: false,
-  },
-];
+    userName: 'TMChein',
+    name: 'Tomas',
+    isFollowing: false
+  }
+]
 
 export const App = () => {
   // const [name, setName] = useState('Elon Musk')
@@ -32,17 +31,18 @@ export const App = () => {
   // const [isFollowing, setIsFollowing] = useState(false);
   // console.log('[App] render with isFollowing', isFollowing)
   return (
-    <section className="App">
-      {users.map((user) => {
-        const { userName, name, isFollowing } = user;
+    <section className='App'>
+      {users.map(user => {
+        const { userName, name, isFollowing } = user
         return (
           <TwitterFollowCard
             userName={userName}
             initialIsFollowing={isFollowing}
-            key={userName}>
+            key={userName}
+          >
             {name}
           </TwitterFollowCard>
-        );
+        )
       })}
       {/* <TwitterFollowCard {...midudev}>
         Miguel Agel Duran
@@ -60,5 +60,5 @@ export const App = () => {
         Cambiar estado de App
       </button> */}
     </section>
-  );
-};
+  )
+}
