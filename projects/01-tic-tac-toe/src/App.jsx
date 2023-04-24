@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TURNS } from "./constants";
 import { checkWinnerFrom, checkEndGame } from "./logic/board";
+import { resetGameStorage, saveGameToStorage } from "./logic/storage/storage";
 import { Board } from "./components/Board";
 import "./App.css";
 import confetti from "canvas-confetti";
@@ -23,8 +24,7 @@ function App() {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
-    window.localStorage.removeItem('board')
-    window.localStorage.removeItem('turn')
+    resetGameStorage();
   };
 
   const updateBoard = (index) => {
@@ -37,9 +37,6 @@ function App() {
     // cambiar de turno
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
-    //guardar partida
-    window.localStorage.setItem("board", JSON.stringify(newBoard));
-    window.localStorage.setItem("turn", newTurn);
     // revisar si hay ganador
     const newWinner = checkWinnerFrom(newBoard);
     if (newWinner) {
@@ -49,6 +46,15 @@ function App() {
       setWinner(false); //empate
     }
   };
+
+  useEffect(() => {
+    // como minimo se ejecuta una vez
+    //guardar partida
+    saveGameToStorage({
+      board: newBoard,
+      turn: newTurn,
+    });
+  }, [turn, board])
 
   return (
     <Board
