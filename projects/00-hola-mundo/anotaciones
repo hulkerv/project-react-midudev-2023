@@ -1,6 +1,6 @@
 Diferencia entre un componente y un elemento
 
-Un componente es una factoria de elementos. Es una funcióm¿n que al eejecutarse devuelve un elemento. M ientras que el elemento es lo que react renderiza.
+Un componente es una factoria de elementos. Es una función que al ejecutarse devuelve un elemento. Mientras que el elemento es lo que react renderiza.
 
 Modificar una prop asignandole un nuevo valor es una mala practica. Las props deben ser inmutables. Lo que se debe hacer antes de modificar una prop es crear una constante cuyo valor es igual a lo que se quiera pasar con la prop.
 

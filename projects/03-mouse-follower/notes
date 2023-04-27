@@ -1,0 +1,8 @@
+no se debe colocar un hook dentro de un condicional. las logicas con condicional deben hacerse dentor del hook.
+
+cuando mediante un useEffect subscribes un evento que depende de si un estado esta cambia, luego cuando el estado vuelve a cambiar la subscripción del evento se mantiene activa. por lo tanto para desactivar la subscripción hay que limpiar el effect. Esto se hace retornando una función en el us effect que limpie el evento
+
+puedes usar getEventListener en la consola del navegador para ver las subscripciones de los distintos eventos
+
+ <React.StrictMode> sirve para determinar si se esta utilizando codigo antiguo de react, si estas haciendo algo incorrecto.
+  ademas al tener un effect ejecutal el effect ejecutal el cleanup del effect y vuelve a ejecutar el effect. Esto lo hace para asegiurarse que esta funcionando bien tu componente y el effect. Esto es una ayuda para desarrollar. este componente no funciona en producción.
