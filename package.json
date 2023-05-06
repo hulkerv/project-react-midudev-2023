@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "^1.33.0",
     "standard": "^17.0.0"
   },
   "eslintConfig": {

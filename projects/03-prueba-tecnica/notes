@@ -1,0 +1,13 @@
+en el index ht ml tengo un script que es el que carga el principio de mi pagina por lo tanto el main.js es el punto de entrada de mi aplicacion.
+
+como este es el primer archivo que se va a cargar en mi aplicacion debo importar el createRoot desde el react-dom/client
+
+con create root hago un document.getElementById('app'), ya que este elemento es donde quiero renderiztr mi app de react. guardo estoi en una constante root que es donde voy a renderizar mi aplicacion. por lo que hago un root.render y defino el codigo que quiero renderizar
+
+The JSX syntax extension is not currently enabled: este error puede ocurrir ya que los aerchivos/js no estan preparados para trabajar con jsx. por lo que el main.js debemos cambiarlos a main.jsx
+
+//!Evitar que mi pagina este en blanco. No debo seguir una prueba sin instalar el linter*/
+
+//!Evitar, siempre que se pueda, que el customhook exporte la actualizacion del estado
+
+ya que, si el customhook puede usar la actualizacion del estado internamente, la logica se puede reutilizar
